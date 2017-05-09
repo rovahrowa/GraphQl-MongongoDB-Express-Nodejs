@@ -57,14 +57,7 @@ You can run these queries / mutations within GraphiQL, alternatively you can run
 
 Create a user
 
-mutation {
-  addUser( name:"Danstan Otieno Onyango",address:"24 Street Nairobi", email:"otis@gmail.com", tel:"(+254) 7228888") {
-    id,
-    name,
-    email,
-    tel
-  }
-}
+
 Find a user
 
 Find the first user in the MongoDB, requesting just the name and email address

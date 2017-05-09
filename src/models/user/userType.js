@@ -28,6 +28,9 @@ export default new GraphQLObjectType({
     address: {
       type: new GraphQLNonNull(GraphQLString)
       },
+    age: {
+       type: new GraphQLNonNull(GraphQLString)
+      },
     email:{
       type: GraphQLString
     },

@@ -7,6 +7,7 @@ var userSchema = new mongoose.Schema({
   id: { type:String, required:true, unique:true, index:true, default:mongoose.Types.ObjectId },
   name: String,
   address:String,
+  age:Number,
   email: String,
   tel: String,
   type: String
@@ -52,8 +53,8 @@ module.exports.getUserByPosition = (root, {id}) => {
   });
 };
 
-module.exports.addUser = (root, {name,address, email, tel}) => {
-  var newUser = new user({name:name,address:address, email:email, tel:tel});
+module.exports.addUser = (root, {name,address, age,email, tel}) => {
+  var newUser = new user({name:name,address:address,age:age ,email:email, tel:tel});
 
   return new Promise((resolve, reject) => {
     newUser.save((err, res) => {
@@ -62,8 +63,8 @@ module.exports.addUser = (root, {name,address, email, tel}) => {
   });
 }
 
-module.exports.updateUser = (root, {name,address, email, tel}) => {
-  var updateUser = {name:name,address:address, email:email, tel:tel};
+module.exports.updateUser = (root, {name,address,age, email, tel}) => {
+  var updateUser = {name:name,address:address,age:age, email:email, tel:tel};
   return new Promise((resolve, reject) => {
     user.findOneAndUpdate(
         { id: id },

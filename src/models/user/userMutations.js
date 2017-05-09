@@ -1,6 +1,3 @@
-/**
- * Created by danstan on 5/9/17.
- */
 import {
   GraphQLObjectType,
   GraphQLSchema,
@@ -26,6 +23,10 @@ export default {
             name:'address',
             type:new GraphQLNonNull(GraphQLString)
         },
+        age:{
+            name:'age',
+            type:new GraphQLNonNull(GraphQLString)
+        },
       email:{
         name:'email',
         type: new GraphQLNonNull(GraphQLString)
@@ -49,6 +50,10 @@ export default {
       },
       address:{
             name:'address',
+            type:new GraphQLNonNull(GraphQLString)
+        },
+        age:{
+            name:'age',
             type:new GraphQLNonNull(GraphQLString)
         },
       email:{

@@ -52,7 +52,7 @@ let schema = new GraphQLSchema({
 })
 
 // Connect MongoDB with Mongoose
-mongoose.connect('mongodb://localhost/graphql-express-mongodb')
+mongoose.connect('mongodb://localhost/graphql-Node-express-mongodb')
 
 // Set up Express and integrate with our GraphQL Schema and configure to use graphiql
 var app = express()
