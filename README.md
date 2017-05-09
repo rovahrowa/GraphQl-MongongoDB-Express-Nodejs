@@ -67,12 +67,26 @@ mutation {
   }
 }
 ```
+Response
+```
+{
+  "data": {
+    "addUser": {
+      "id": "591196b84c212c2eca23b4c4",
+      "name": "Danstan Otieno Onyango",
+      "address": "24 Street Nairobi",
+      "email": "otis@gmail.com",
+      "tel": "(+254) 7228888"
+    }
+  }
+}
+```
 Find a user
 
 Find the first user in the MongoDB, requesting just the name and email address
 ```
 query {
-  userId(id:"56e0582a07be7df61583d9a4") {
+  userId(id:"591196b84c212c2eca23b4c4") {
     name,
     email
   }
@@ -91,7 +105,7 @@ query {
 Update a user
 ```
 mutation {
-  updateUser(id:"56e0919c2c4670ed23fe4a28", name:"Danstan Otieno Onyango",address:"24 Street Nairobi", email:"otis@gmail.com", tel:"(+254) 7228888") {
+  updateUser(id:"591196b84c212c2eca23b4c4", name:"Danstan Otieno Onyango",address:"24 Street Nairobi", email:"otis@gmail.com", tel:"(+254) 7228888") {
     id
   }
 }
