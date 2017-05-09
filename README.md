@@ -59,11 +59,13 @@ You can run these queries / mutations within GraphiQL, alternatively you can run
 Create a user
 ```
 mutation {
-  addUser( name:"Danstan Otieno Onyango",address:"24 Street Nairobi", email:"otis@gmail.com", tel:"(+254) 7228888") {
+  addUser( name:"Danstan Otieno Onyango",address:"24 Street Nairobi",age:"28", email:"otis@gmail.com", tel:"(+254) 7228888") {
     id,
     name,
     email,
-    tel
+    address
+    tel,
+    age
   }
 }
 ```
@@ -72,11 +74,12 @@ Response
 {
   "data": {
     "addUser": {
-      "id": "591196b84c212c2eca23b4c4",
+      "id": "5911ad4cfdf06e07e4841f6b",
       "name": "Danstan Otieno Onyango",
-      "address": "24 Street Nairobi",
       "email": "otis@gmail.com",
-      "tel": "(+254) 7228888"
+      "address": "24 Street Nairobi",
+      "tel": "(+254) 7228888",
+      "age": "28"
     }
   }
 }
@@ -86,9 +89,28 @@ Find a user
 Find the first user in the MongoDB, requesting just the name and email address
 ```
 query {
-  userId(id:"591196b84c212c2eca23b4c4") {
+  userId(id:"5911adb3fdf06e07e4841f6d") {
+    id,
     name,
-    email
+    email,
+    address
+    tel,
+    age
+  }
+}
+```
+Response
+```
+{
+  "data": {
+    "userId": {
+      "id": "5911adb3fdf06e07e4841f6d",
+      "name": "Danstan Otieno Onyango",
+      "email": "otis@gmail.com",
+      "address": "24 Street Nairobi",
+      "tel": "(+254) 7228888",
+      "age": "28"
+    }
   }
 }
 ```
@@ -96,16 +118,62 @@ Show all users
 ```
 query {
   users {
-    id,```
+    id,
     name,
-    email
+    address,
+    email,
+    age,
+  }
+}
+```
+Response
+```
+{
+  "data": {
+    "users": [
+      {
+        "id": "5911acb8fdf06e07e4841f65",
+        "name": "Danstan Otieno Onyango",
+        "address": "24 Street Nairobi",
+        "email": "otis@gmail.com",
+        "age": "28"
+      },
+      {
+        "id": "5911ad15fdf06e07e4841f67",
+        "name": "Danstan Otieno Onyango",
+        "address": "24 Street Nairobi",
+        "email": "otis@gmail.com",
+        "age": "28"
+      },
+      {
+        "id": "5911ad3cfdf06e07e4841f69",
+        "name": "Danstan Otieno Onyango",
+        "address": "24 Street Nairobi",
+        "email": "otis@gmail.com",
+        "age": "28"
+      },
+      {
+        "id": "5911ad4cfdf06e07e4841f6b",
+        "name": "Danstan Otieno Onyango",
+        "address": "24 Street Nairobi",
+        "email": "otis@gmail.com",
+        "age": "28"
+      },
+      {
+        "id": "5911adb3fdf06e07e4841f6d",
+        "name": "Danstan Otieno Onyango",
+        "address": "24 Street Nairobi",
+        "email": "otis@gmail.com",
+        "age": "28"
+      }
+    ]
   }
 }
 ```
 Update a user
 ```
 mutation {
-  updateUser(id:"591196b84c212c2eca23b4c4", name:"Danstan Otieno Onyango",address:"24 Street Nairobi", email:"otis@gmail.com", tel:"(+254) 7228888") {
+  updateUser(id:"5911b5cdfdf06e07e4841fe8", name:"Danstan Otieno Onyango",address:"24 Street Nairobi",age:"30", email:"otis@gmail.com", tel:"(+254) 7228888") {
     id
   }
 }
