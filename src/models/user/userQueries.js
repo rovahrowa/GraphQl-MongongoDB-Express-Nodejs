@@ -1,49 +1,46 @@
-/**
- * Created by danstan on 5/9/17.
- */
 import {
-  GraphQLObjectType,
-  GraphQLSchema,
-  GraphQLString,
-  GraphQLInt,
-  GraphQLNonNull,
-  GraphQLList,
-  GraphQLID
-  } from 'graphql';
+    GraphQLObjectType,
+    GraphQLSchema,
+    GraphQLString,
+    GraphQLInt,
+    GraphQLNonNull,
+    GraphQLList,
+    GraphQLID
+} from 'graphql';
 
 import userType from './userType'
 import user from './userSchema'
 
 export default {
-  users: {
-    type: new GraphQLList(userType),
-    resolve: user.getListOfUsers
-  },
-  user: {
-    type: userType,
-    args: {
-      id: {
-        type: GraphQLID
-      }
+    users: {
+        type: new GraphQLList(userType),
+        resolve: user.getListOfUsers
     },
-    resolve: user.getUserByPosition
-  },
-  userId: {
-    type: userType,
-    args: {
-      id: {
-        type: GraphQLID
-      }
+    user: {
+        type: userType,
+        args: {
+            id: {
+                type: GraphQLID
+            }
+        },
+        resolve: user.getUserByPosition
     },
-    resolve: user.getUserById
-  },
-  userByName: {
-    type: userType,
-    args: {
-      name: {
-        type: GraphQLString
-      }
+    userId: {
+        type: userType,
+        args: {
+            id: {
+                type: GraphQLID
+            }
+        },
+        resolve: user.getUserById
     },
-    resolve: user.getUserByName
-  }
+    userByName: {
+        type: userType,
+        args: {
+            name: {
+                type: GraphQLString
+            }
+        },
+        resolve: user.getUserByName
+    }
 };

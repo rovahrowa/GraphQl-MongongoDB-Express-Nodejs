@@ -1,41 +1,39 @@
-/**
- * Created by danstan on 5/9/17.
- */
 import {
-  GraphQLObjectType,
-  GraphQLSchema,
-  GraphQLString,
-  GraphQLInt,
-  GraphQLNonNull,
-  GraphQLList,
-  GraphQLID
- } from 'graphql'
+    GraphQLObjectType,
+    GraphQLSchema,
+    GraphQLString,
+    GraphQLInt,
+    GraphQLNonNull,
+    GraphQLList,
+    GraphQLID
+} from 'graphql'
 
 // Define our user type, with two string fields; `id` and `name`
 export default new GraphQLObjectType({
-  name: 'User',
-  description: 'User object',
-  fields: () => ({
-    _id: {
-      type: new GraphQLNonNull(GraphQLID)
-    },
-    id: {
-      type: GraphQLString
-    },
-    name: {
-      type: new GraphQLNonNull(GraphQLString)
-    },
-    address: {
-      type: new GraphQLNonNull(GraphQLString)
-      },
-    age: {
-       type: new GraphQLNonNull(GraphQLString)
-      },
-    email:{
-      type: GraphQLString
-    },
-    tel: {
-      type: GraphQLString
-    }
-  })
+    name: 'User',
+    description: 'User object',
+    fields: () => ({
+        _id: {
+            type: new GraphQLNonNull(GraphQLID)
+        },
+        id: {
+            type: GraphQLString
+        },
+        name: {
+            type: new GraphQLNonNull(GraphQLString)
+        },
+        email:{
+            type: GraphQLString
+        },
+        tel: {
+            type: GraphQLString
+        },
+        address: {
+            type: GraphQLString
+        },
+        age: {
+            type: GraphQLString
+        }
+
+    })
 });
