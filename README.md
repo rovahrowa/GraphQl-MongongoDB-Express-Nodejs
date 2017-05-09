@@ -1,13 +1,13 @@
 # GraphQl-MongongoDB-Express-Nodejs
-GraphQL + Express + MongoDB
+Nodejs--->GraphQL + Express + MongoDB
 
 A small project to illustrate using GraphQL with MongoDB in Express as simply as possible
 Project Goals:
 
-Create a GraphQL + MongoDB + Express project that is as simple as possible
+Create a Nodejs GraphQL + MongoDB + Express project that is as simple as possible
 GraphiQL Integration to send Queries / Mutations
-Ability to use Postman or other REST Client to POST GraphQL Queries / Mutations
-Use of ES6 (but minimally)
+Ability to use Postman and Http Requestor or other REST Client to POST GraphQL Queries / Mutations
+Use of ES6 (but minimally)-Babel interprates ES6 
 Full Create, Update and Query from GraphQL to MongoDB
 Installation
 
@@ -20,7 +20,7 @@ MongoDB
 In order to run this project you need to install MongoDB and ensure an instance is running. https://www.npmjs.com/package/mongodb
 
 npm install mongodb --save
-mongod
+
 To see the data you are saving you can use a MongoDB Manager App such as https://robomongo.org/
 
 NPM Modules
