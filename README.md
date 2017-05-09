@@ -56,6 +56,9 @@ Running GraphQL Mutations & Queries
 
 You can run these queries / mutations within GraphiQL, alternatively you can run them within a tool such as Postman. To do so ensure you POST the query / mutation in the body and set the content-type to GraphQL.
 
+![alt Image Showing how to do the HTTP POST on HTTP Requestor](https://github.com/rovahrowa/GraphQl-MongongoDB-Express-Nodejs/blob/master/readme/post-httpreq.png)
+
+
 Create a user
 <<<<<<< HEAD
 
