@@ -26,7 +26,7 @@ To see the data you are saving you can use a MongoDB Manager App such as https:/
 NPM Modules
 
 The following NPM modules are required in package.json:
-
+```
 express
 express-graphql
 graphql
@@ -34,6 +34,7 @@ mongoose
 babel-cli
 babel-preset-es2015
 nodemon
+```
 Install with:
 
 npm install
@@ -56,7 +57,7 @@ Running GraphQL Mutations & Queries
 You can run these queries / mutations within GraphiQL, alternatively you can run them within a tool such as Postman. To do so ensure you POST the query / mutation in the body and set the content-type to GraphQL.
 
 Create a user
-
+```
 mutation {
   addUser( name:"Danstan Otieno Onyango",address:"24 Street Nairobi", email:"otis@gmail.com", tel:"(+254) 7228888") {
     id,
@@ -65,32 +66,36 @@ mutation {
     tel
   }
 }
+```
 Find a user
 
 Find the first user in the MongoDB, requesting just the name and email address
-
+```
 query {
   userId(id:"56e0582a07be7df61583d9a4") {
     name,
     email
   }
 }
+```
 Show all users
-
+```
 query {
   users {
-    id,
+    id,```
     name,
     email
   }
 }
+```
 Update a user
-
+```
 mutation {
   updateUser(id:"56e0919c2c4670ed23fe4a28", name:"Danstan Otieno Onyango",address:"24 Street Nairobi", email:"otis@gmail.com", tel:"(+254) 7228888") {
     id
   }
 }
+```
 GraphQL Resolvers
 
 GraphQL doesn't care where your data is stored, in this case it's in a MongoDB.
