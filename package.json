@@ -1,0 +1,29 @@
+{
+  "name": "graphql-mongodb-express-node",
+  "version": "1.0.0",
+  "description": "An implemetation of Facebook GraphQl on MongoDB Using Express on Nodejs Environment",
+  "main": "app.js",
+  "scripts": {
+    "test": "/src/test/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rovahrowa/GraphQl-MongongoDB-Express-Nodejs.git"
+  },
+  "keywords": [
+    "longman"
+  ],
+  "author": "Danstan Otieno Onyango",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rovahrowa/GraphQl-MongongoDB-Express-Nodejs/issues"
+  },
+  "homepage": "https://github.com/rovahrowa/GraphQl-MongongoDB-Express-Nodejs#readme",
+  "dependencies": {
+    "express": "^4.15.2",
+    "express-graphql": "^0.6.4",
+    "graphql": "^0.9.6",
+    "mongodb": "^2.2.26",
+    "mongoose": "^4.9.8"
+  }
+}
