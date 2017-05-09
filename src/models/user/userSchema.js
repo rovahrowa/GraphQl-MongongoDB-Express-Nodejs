@@ -3,7 +3,7 @@ import mongoose from 'mongoose';
 var userSchema = new mongoose.Schema({
     id: { type:String, required:true, unique:true, index:true, default:mongoose.Types.ObjectId },
     name: String,
-    email: String,
+    email: { type:String, required:true, unique:true},
     tel: String,
     address:String,
     age:String,
