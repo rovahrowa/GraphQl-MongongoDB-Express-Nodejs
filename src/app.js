@@ -19,12 +19,14 @@ import graphqlHTTP from 'express-graphql'
 
 // Import GraphQL Queries
 import userQueries from './models/user/userQueries'
+import accountQueries from './models/account/accountQueries'
 
 // Import GraphQL Mutations
 import userMutations from './models/user/userMutations'
+import accountMutations from './models/account/accountMutations'
 
-// Setup GraphQL RootQuery
-let RootQuery = new GraphQLObjectType({
+// Setup GraphQL UsersQuery
+let UserQuery = new GraphQLObjectType({
         name: 'Query',
         description: 'Realize Root Query',
         fields: () => ({
@@ -35,8 +37,19 @@ let RootQuery = new GraphQLObjectType({
     })
 })
 
-// Setup GraphQL RootMutation
-let RootMutation = new GraphQLObjectType({
+//Setup GraphQL Accounts Query
+
+let AccountQuery = new GraphQLObjectType({
+    name: 'Query',
+    description: 'Realize Root Query',
+    fields: () => ({
+        accounts: accountQueries.accounts,
+        accountByEmail: accountQueries.accountByEmail
+    })
+})
+
+// Setup GraphQL UserMutation
+let UserMutation = new GraphQLObjectType({
         name: 'Mutation',
         description: 'Realize Root Mutations',
         fields: () => ({
@@ -45,10 +58,28 @@ let RootMutation = new GraphQLObjectType({
     })
 })
 
-// Set up GraphQL Schema with our RootQuery and RootMutation
-let schema = new GraphQLSchema({
-    query: RootQuery,
-    mutation: RootMutation
+//Setup GraphQl Account Mutation
+let AccountMutation = new GraphQLObjectType({
+    name: 'Mutation',
+    description: 'Realize Root Mutations',
+    fields: () => ({
+        addAccount: accountMutations.addAccount,
+        updateAccount: accountMutations.updateAccount
+    })
+})
+
+// Set up GraphQL UsersSchema with our UserQuery and UserMutation
+
+let userSchema = new GraphQLSchema({
+    query: UserQuery,
+    mutation: UserMutation
+})
+
+// Set up GraphQL UsersSchema with our AccountQuery and AccountMutation
+
+let accountSchema = new GraphQLSchema({
+    query: AccountQuery,
+    mutation: AccountMutation
 })
 
 // Connect MongoDB with Mongoose
@@ -56,7 +87,8 @@ mongoose.connect('mongodb://localhost/graphql-Node-express-mongodb')
 
 // Set up Express and integrate with our GraphQL Schema and configure to use graphiql
 var app = express()
-app.use('/graphql', graphqlHTTP({ schema: schema, graphiql: true }))
+app.use('/accounts', graphqlHTTP({ schema: accountSchema, graphiql: true }))
+app.use('/users', graphqlHTTP({ schema: userSchema, graphiql: true }))
 app.listen('5000')
 
 var status = {
@@ -64,8 +96,11 @@ var status = {
         "Online": true,
         "Port": 5000
     },
-    "GraphiQL": {
-        "url": "http://localhost:5000/graphql"
+    "Users": {
+        "url": "http://localhost:5000/users"
+    },
+    "Accounts": {
+        "url": "http://localhost:5000/accounts"
     }
 }
 console.dir(status, {depth: null, colors: true })
