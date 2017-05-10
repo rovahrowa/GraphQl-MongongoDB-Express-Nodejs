@@ -1,3 +1,6 @@
+/**
+ * Created by danstan on 5/9/17.
+ */
 import mongoose from 'mongoose';
 
 var userSchema = new mongoose.Schema({

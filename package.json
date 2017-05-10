@@ -30,6 +30,7 @@
     "mongoose": "^4.9.8"
   },
   "devDependencies": {
-    "babel-core": "^6.24.1"
+    "babel-core": "^6.24.1",
+    "node-datetime": "^1.0.0"
   }
 }
